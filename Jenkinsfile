@@ -5,11 +5,12 @@ pipeline {
         maven "M3"
     }
 
-    steps {
+    stages {
         stage('Build') {
-            git 'https://github.com/victorleal/inf335-trab5.git'
-
-            sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+            steps {
+                git 'https://github.com/victorleal/inf335-trab5.git'
+                sh 'mvn -Dmaven.test.failure.ignore=true clean package'
+            }
         }
 
         post {
