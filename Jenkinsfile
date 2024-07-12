@@ -12,12 +12,12 @@ pipeline {
                 sh 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
         }
+    }
 
-        post {
-            success {
-                junit '**/target/surefire-reports/TEST-*.xml'
-                archiveArtifacts 'target/*.jar'
-            }
+    post {
+        success {
+            junit '**/target/surefire-reports/TEST-*.xml'
+            archiveArtifacts 'target/*.jar'
         }
     }
 }
