@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/victorleal/inf335-trab5.git'
                 sh 'mvn -Dmaven.test.failure.ignore=true clean package'
             }
         }
