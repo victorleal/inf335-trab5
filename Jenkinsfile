@@ -5,7 +5,7 @@ pipeline {
         maven "M3"
     }
 
-    stages {
+    steps {
         stage('Build') {
             git 'https://github.com/victorleal/inf335-trab5.git'
 
